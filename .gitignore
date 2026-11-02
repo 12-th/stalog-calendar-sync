@@ -1,0 +1,10 @@
+.env
+.env.*
+*.secret
+*.token
+credentials.json
+client_secret*.json
+cookies*.json
+*.pem
+*.log
+.DS_Store

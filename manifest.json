@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzmZdKF3u924Pz6iJR29Jf/OOYthuYsHS+4MFQqH8NXWakyjWTLlm4ZzjeDr7ephFPZOMebRt54I9I9wq0AbchK0T+aW6VsXvEOyZXfOtSQE8ViG9TWgPOB7bmyIurD2myqWZ7Its0qMnI7zXDM6AGL8onYcNQWoXhm0P+5cQfoaKqk90zJFOD4l4z9BnHdV7lKyxGCrE4iakqjOEawG1IvngQx7gJXOO9z5TFMbF76zFDwD6F8B3LOGIMcdYoSiK8LhOZmszqQnl1uoXhmVdUhBPpSzhAg20GsBiEspo2cKtRMVFt6tSwmuaOYIm08wvUfRx7n++PBBDAA7Wxy5ahwIDAQAB",
+  "name": "岩崎学園スタログ Googleカレンダー同期",
+  "version": "1.1.2.7",
+  "description": "スタログの時間割をGoogleカレンダーへ登録します。",
+  "permissions": ["identity", "storage"],
+  "host_permissions": ["https://www.googleapis.com/*"],
+  "oauth2": {
+    "client_id": "542328134527-3fm3jo1i07fj613eldtub1926vq4djbj.apps.googleusercontent.com",
+    "scopes": ["https://www.googleapis.com/auth/calendar"]
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://portal.iwasaki.ac.jp/lms/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Googleカレンダー同期"
+  }
+}
